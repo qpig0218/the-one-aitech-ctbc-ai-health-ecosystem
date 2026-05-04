@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>本一科技 x 中信科大｜南科 AI 健康促進企劃案</title>
+  <meta name="description" content="本一科技與中信科大合作案互動式企劃網頁：南科 AI 健康促進產官學服務生態系、ASML 示範案、DIGITAL+ 補助路線與一週行動計畫。">
+  <style>
+    :root {
+      --ink: #111712;
+      --ink-soft: #314038;
+      --paper: #f6f0e3;
+      --paper-deep: #e8dcc5;
+      --mist: #e7f3ef;
+      --teal: #007c72;
+      --teal-dark: #004f49;
+      --cobalt: #2456a6;
+      --signal: #e6622e;
+      --gold: #c09b45;
+      --rose: #b74b58;
+      --line: rgba(17, 23, 18, .16);
+      --shadow: 0 22px 60px rgba(17, 23, 18, .18);
+      --serif: "Songti TC", "Hiragino Mincho ProN", "YuMincho", "Bodoni 72", Georgia, serif;
+      --sans: "Avenir Next", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      --mono: "SF Mono", "Menlo", "Consolas", monospace;
+      --max: 1180px;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 11% 5%, rgba(0, 124, 114, .13), transparent 23rem),
+        linear-gradient(90deg, rgba(17, 23, 18, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 42px 42px, auto;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; color: inherit; }
+
+    .progress {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--signal), var(--teal), var(--cobalt));
+      transform-origin: left center;
+      transform: scaleX(0);
+      z-index: 80;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(calc(100% - 28px), var(--max));
+      z-index: 70;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 10px 10px 16px;
+      border: 1px solid rgba(255, 255, 255, .34);
+      border-radius: 999px;
+      background: rgba(246, 240, 227, .86);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 42px rgba(17, 23, 18, .14);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: conic-gradient(from 130deg, var(--teal), var(--gold), var(--signal), var(--cobalt), var(--teal));
+      box-shadow: inset 0 0 0 6px rgba(246, 240, 227, .65);
+      flex: 0 0 auto;
+    }
+
+    .brand span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav a,
+    .menu-toggle,
+    .ghost-button,
+    .primary-button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0 14px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .nav a:hover,
+    .ghost-button:hover { background: rgba(0, 124, 114, .09); }
+    .primary-button {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 12px 30px rgba(17, 23, 18, .22);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: rgba(255, 255, 255, .45);
+      border-color: var(--line);
+    }
+
+    .hero {
+      min-height: 94svh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      isolation: isolate;
+      overflow: hidden;
+      color: #fffaf0;
+      background: #111712;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(17, 23, 18, .92) 0%, rgba(17, 23, 18, .68) 43%, rgba(17, 23, 18, .2) 100%),
+        linear-gradient(0deg, rgba(17, 23, 18, .88) 0%, rgba(17, 23, 18, .12) 55%, rgba(17, 23, 18, .52) 100%),
+        url("assets/hero-plan.png") center / cover no-repeat;
+      transform: scale(1.04);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(90deg, black, transparent 72%);
+      opacity: .55;
+    }
+
+    .hero-inner {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+      padding: 116px 0 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(280px, .56fr);
+      gap: clamp(24px, 5vw, 78px);
+      align-items: end;
+    }
+
+    .issue-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 250, 240, .78);
+    }
+
+    .issue-line b {
+      color: #fffaf0;
+      border: 1px solid rgba(255, 250, 240, .46);
+      border-radius: 999px;
+      padding: 5px 9px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: none;
+      font-family: var(--serif);
+      font-weight: 900;
+      line-height: 1.02;
+      font-size: clamp(44px, 6vw, 82px);
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-kicker {
+      margin: 22px 0 0;
+      max-width: 780px;
+      font-size: clamp(18px, 2vw, 28px);
+      line-height: 1.45;
+      color: rgba(255, 250, 240, .88);
+      text-wrap: balance;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-actions .ghost-button {
+      color: #fffaf0;
+      border-color: rgba(255, 250, 240, .44);
+      background: rgba(255, 250, 240, .08);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-actions .primary-button {
+      background: #fffaf0;
+      color: var(--ink);
+    }
+
+    .cover-stats {
+      display: grid;
+      gap: 12px;
+      align-self: stretch;
+      align-content: end;
+    }
+
+    .stat-strip {
+      border: 1px solid rgba(255, 250, 240, .26);
+      background: rgba(17, 23, 18, .34);
+      backdrop-filter: blur(16px);
+      padding: 17px;
+      border-radius: 8px;
+    }
+
+    .stat-strip small {
+      display: block;
+      font-family: var(--mono);
+      color: rgba(255, 250, 240, .66);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .stat-strip strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1;
+    }
+
+    .stat-strip span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 250, 240, .82);
+      font-size: 14px;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: rgba(255, 250, 240, .62);
+    }
+
+    .section {
+      padding: clamp(58px, 9vw, 104px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .7fr) minmax(280px, .3fr);
+      gap: 26px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .14em;
+      color: var(--teal-dark);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 60px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .manifesto {
+      background: var(--ink);
+      color: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(0, 124, 114, .28), transparent 36%),
+        linear-gradient(315deg, rgba(230, 98, 46, .18), transparent 34%);
+      pointer-events: none;
+    }
+
+    .manifesto .wrap {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(280px, .44fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(30px, 3.5vw, 52px);
+      line-height: 1.13;
+    }
+
+    .manifesto p {
+      color: rgba(246, 240, 227, .82);
+      font-size: 19px;
+      margin: 20px 0 0;
+      max-width: 830px;
+    }
+
+    .decision-board {
+      display: grid;
+      gap: 10px;
+      counter-reset: decision;
+    }
+
+    .decision-item {
+      counter-increment: decision;
+      padding: 15px 16px;
+      border: 1px solid rgba(246, 240, 227, .22);
+      border-radius: 8px;
+      background: rgba(246, 240, 227, .08);
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .decision-item::before {
+      content: counter(decision, decimal-leading-zero);
+      font-family: var(--mono);
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 12px;
+      padding-top: 3px;
+    }
+
+    .decision-item strong { display: block; }
+    .decision-item span { color: rgba(246, 240, 227, .72); font-size: 14px; }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .chapter-card {
+      min-height: 420px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, .68);
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 170px 1fr;
+      box-shadow: 0 14px 36px rgba(17, 23, 18, .08);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(0, 124, 114, .38);
+    }
+
+    .chapter-media {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .chapter-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .85;
+      transform: scale(1.03);
+      transition: transform .45s ease;
+    }
+
+    .chapter-card:hover img { transform: scale(1.09); }
+
+    .chapter-index {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      display: inline-flex;
+      min-width: 46px;
+      min-height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(246, 240, 227, .9);
+      font-family: var(--mono);
+      font-weight: 900;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .chapter-body { padding: 22px; }
+    .chapter-body h3 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(21px, 1.95vw, 25px);
+      line-height: 1.12;
+      white-space: nowrap;
+      letter-spacing: 0;
+    }
+
+    .chapter-body p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mini-list li {
+      display: grid;
+      grid-template-columns: 13px 1fr;
+      gap: 8px;
+      align-items: start;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .mini-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--signal);
+      margin-top: 8px;
+    }
+
+    .radar {
+      background: var(--mist);
+    }
+
+    .radar .section-head {
+      grid-template-columns: minmax(0, .58fr) minmax(320px, .42fr);
+      align-items: center;
+    }
+
+    .radar-visual {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(190px, 250px);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .radar-visual p {
+      margin: 0;
+    }
+
+    .radar-art {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(17, 23, 18, .12);
+      background: #fffefa;
+      box-shadow: 0 14px 34px rgba(17, 23, 18, .1);
+      transform: rotate(1.5deg);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 24px;
+    }
+
+    .filter {
+      border: 1px solid rgba(0, 124, 114, .28);
+      background: rgba(255,255,255,.52);
+      color: var(--teal-dark);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .filter[aria-pressed="true"] {
+      background: var(--teal-dark);
+      color: var(--paper);
+    }
+
+    .grant-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .grant-card {
+      border: 1px solid rgba(17, 23, 18, .14);
+      background: rgba(255, 255, 255, .7);
+      border-radius: 8px;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .grant-card.is-hidden { display: none; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 4px 7px;
+      background: rgba(36, 86, 166, .1);
+      color: var(--cobalt);
+    }
+
+    .tag.hot { background: rgba(230, 98, 46, .14); color: #943713; }
+    .tag.wait { background: rgba(192, 155, 69, .18); color: #765b16; }
+    .tag.closed { background: rgba(183, 75, 88, .13); color: #85323d; }
+
+    .grant-card h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+      font-family: var(--serif);
+    }
+
+    .grant-card p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+
+    .meter {
+      height: 9px;
+      background: rgba(17, 23, 18, .1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .meter > span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      background: linear-gradient(90deg, var(--teal), var(--signal));
+      border-radius: inherit;
+    }
+
+    .timeline-shell {
+      display: grid;
+      grid-template-columns: minmax(240px, .32fr) minmax(0, .68fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .day-tabs {
+      position: sticky;
+      top: 88px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .day-tab {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, .62);
+      border-radius: 8px;
+      padding: 13px 14px;
+      cursor: pointer;
+      font-weight: 850;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .day-tab span {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--signal);
+      flex: 0 0 auto;
+    }
+
+    .day-tab[aria-selected="true"] {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .day-panel {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 250, 240, .7);
+      padding: clamp(22px, 4vw, 34px);
+      min-height: 420px;
+      box-shadow: 0 18px 46px rgba(17, 23, 18, .08);
+    }
+
+    .day-panel.is-active { display: block; animation: rise .35s ease both; }
+    .day-panel h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+    }
+
+    .day-panel .lead { margin: 0 0 22px; color: var(--ink-soft); font-size: 17px; }
+    .task-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .task-list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px;
+      border: 1px solid rgba(17, 23, 18, .1);
+      border-radius: 8px;
+      background: rgba(255,255,255,.45);
+    }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 124, 114, .4);
+      display: grid;
+      place-items: center;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .sow {
+      background:
+        linear-gradient(90deg, rgba(17, 23, 18, .045) 1px, transparent 1px),
+        #fffaf0;
+      background-size: 36px 36px;
+    }
+
+    .sow-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .7fr) minmax(290px, .3fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .phase-board {
+      display: grid;
+      gap: 12px;
+    }
+
+    .phase {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(246, 240, 227, .74);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .phase-time {
+      font-family: var(--mono);
+      font-weight: 950;
+      color: var(--signal);
+      letter-spacing: .02em;
+    }
+
+    .phase h3 { margin: 0 0 5px; font-size: 19px; }
+    .phase p { margin: 0; color: var(--ink-soft); }
+
+    .kpi-panel {
+      position: sticky;
+      top: 88px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .kpi-panel header {
+      padding: 20px;
+      border-bottom: 1px solid rgba(246, 240, 227, .18);
+    }
+
+    .kpi-panel h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .kpi-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .kpi-list li {
+      min-height: 100px;
+      padding: 17px;
+      border-bottom: 1px solid rgba(246, 240, 227, .14);
+      border-right: 1px solid rgba(246, 240, 227, .14);
+    }
+
+    .kpi-list strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 28px;
+      line-height: 1;
+      color: #fffaf0;
+    }
+
+    .kpi-list span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(246, 240, 227, .72);
+      font-size: 13px;
+    }
+
+    .pack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .file-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 250, 240, .7);
+      padding: 16px;
+      min-height: 168px;
+      display: grid;
+      align-content: space-between;
+      transition: transform .24s ease, background .24s ease;
+    }
+
+    .file-card:hover {
+      transform: translateY(-4px);
+      background: #fffaf0;
+    }
+
+    .file-card b {
+      font-size: 14px;
+      color: var(--teal-dark);
+      font-family: var(--mono);
+    }
+
+    .file-card h3 {
+      margin: 10px 0 12px;
+      line-height: 1.25;
+      font-size: 18px;
+    }
+
+    .file-card span {
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .sources {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .source-link {
+      border: 1px solid rgba(246, 240, 227, .16);
+      border-radius: 8px;
+      padding: 14px;
+      color: rgba(246, 240, 227, .82);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .source-link:hover { background: rgba(246, 240, 227, .08); color: #fffaf0; }
+
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 75;
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: rgba(17, 23, 18, .9);
+      color: var(--paper);
+      backdrop-filter: blur(14px);
+      border-radius: 999px;
+      padding: 8px;
+      gap: 8px;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 18px 46px rgba(17, 23, 18, .28);
+    }
+
+    .mobile-cta a {
+      min-height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .mobile-cta a:first-child { background: var(--paper); color: var(--ink); }
+    .mobile-cta a:last-child { border: 1px solid rgba(246, 240, 227, .28); }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .topbar { top: 10px; }
+      .menu-toggle { display: inline-flex; }
+      .nav {
+        position: fixed;
+        inset: 70px 14px auto 14px;
+        display: none;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(246, 240, 227, .96);
+        box-shadow: var(--shadow);
+        grid-template-columns: 1fr;
+      }
+      body.menu-open .nav { display: grid; }
+      .nav a { justify-content: flex-start; }
+      .hero-inner,
+      .manifesto .wrap,
+      .section-head,
+      .sow-layout,
+      .timeline-shell {
+        grid-template-columns: 1fr;
+      }
+      .radar .section-head {
+        grid-template-columns: 1fr;
+      }
+      .radar-visual {
+        grid-template-columns: minmax(0, 1fr) minmax(170px, 220px);
+      }
+      .hero-inner { padding-top: 108px; }
+      .cover-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .chapter-grid,
+      .grant-grid,
+      .pack-grid,
+      .source-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .day-tabs,
+      .kpi-panel {
+        position: static;
+      }
+      .day-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { background-size: auto, 28px 28px, auto; }
+      .topbar { width: calc(100% - 18px); padding-left: 12px; }
+      .brand span { max-width: 54vw; }
+      .nav { inset-inline: 9px; }
+      .hero { min-height: 92svh; }
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(17, 23, 18, .96) 0%, rgba(17, 23, 18, .54) 62%, rgba(17, 23, 18, .72) 100%),
+          url("assets/hero-plan.png") 66% center / cover no-repeat;
+      }
+      .hero-inner {
+        width: min(calc(100% - 26px), var(--max));
+        padding: 96px 0 88px;
+        gap: 26px;
+      }
+      h1 {
+        max-width: none;
+        font-size: clamp(38px, 12vw, 54px);
+      }
+      .hero-kicker {
+        font-size: 17px;
+      }
+      .hero-actions {
+        display: none;
+      }
+      .cover-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+      }
+      .stat-strip {
+        padding: 10px 8px;
+        min-width: 0;
+      }
+      .stat-strip small {
+        font-size: 9px;
+        letter-spacing: .08em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .stat-strip strong {
+        font-size: clamp(24px, 8vw, 32px);
+      }
+      .stat-strip span { display: none; }
+      .section {
+        padding: 56px 0;
+      }
+      .wrap,
+      .section-head {
+        width: min(calc(100% - 26px), var(--max));
+      }
+      .radar-visual {
+        grid-template-columns: 1fr;
+      }
+      .radar-art {
+        max-width: 240px;
+        justify-self: center;
+        transform: rotate(1deg);
+      }
+      .chapter-grid,
+      .grant-grid,
+      .pack-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+      .chapter-card {
+        min-height: 0;
+        grid-template-rows: 150px auto;
+      }
+      .filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+      }
+      .filter { white-space: nowrap; }
+      .day-tabs {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+      .day-tab {
+        min-width: 148px;
+        display: grid;
+      }
+      .phase {
+        grid-template-columns: 1fr;
+      }
+      .kpi-list {
+        grid-template-columns: 1fr 1fr;
+      }
+      .file-card {
+        min-height: 132px;
+      }
+      .mobile-cta { display: grid; }
+      .scroll-cue { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="topbar" aria-label="主導覽">
+    <a class="brand" href="#top" aria-label="回到首頁">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>本一科技 × 中信科大</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">選單</button>
+    <nav class="nav" id="site-nav">
+      <a href="#chapters">三大計畫</a>
+      <a href="#radar">補助雷達</a>
+      <a href="#timeline">一週行動</a>
+      <a href="#sow">90 天示範</a>
+      <a class="primary-button" href="#pack">資料包</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <div class="issue-line">
+            <b>Issue 2026.05</b>
+            <span>Southern Taiwan AI Health Dossier</span>
+          </div>
+          <h1 id="hero-title"><span>次世代智慧健康</span><span>南科永續生態系</span></h1>
+          <p class="hero-kicker">把本一科技的 AI 健康平台、中信科大的健康專業人才、南科企業場域，整合成可示範、可補助、可商業化的三年合作計畫。</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#chapters">閱讀企劃</a>
+            <a class="ghost-button" href="pack_20260511/00_資料包索引.md">開啟資料包索引</a>
+            <a class="ghost-button" href="downloads/benyi-ctbc-complete-pack.zip" download>下載全部文件</a>
+          </div>
+        </div>
+        <aside class="cover-stats" aria-label="企劃案重點數字">
+          <div class="stat-strip">
+            <small>Next Meeting</small>
+            <strong>5/11</strong>
+            <span>14:00 追進會議，需完成決策頁。</span>
+          </div>
+          <div class="stat-strip">
+            <small>First Pilot</small>
+            <strong>90 天</strong>
+            <span>ASML 或南科大型企業示範案。</span>
+          </div>
+          <div class="stat-strip">
+            <small>Grant Window</small>
+            <strong>5/18</strong>
+            <span>DIGITAL+ 本輪申請截止。</span>
+          </div>
+        </aside>
+      </div>
+      <div class="scroll-cue">SCROLL TO THE ACTION PLAN</div>
+    </section>
+
+    <section class="section manifesto">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="eyebrow">Editorial Thesis</p>
+          <h2>這不是一份簡報。這是一個要讓政府、學校、企業都能立刻進場的合作劇本。</h2>
+          <p>5/11 會議應該把「概念討論」推進到「誰主責、先做哪家企業、申請哪個補助、下個月交付什麼」的決策狀態。本一科技要帶進場的是一套完整資料包，而不是單點產品介紹。</p>
+        </div>
+        <div class="decision-board reveal" aria-label="5月11日決策清單">
+          <div class="decision-item"><div><strong>主計畫命名</strong><span>南科 AI 健康促進產官學服務生態系。</span></div></div>
+          <div class="decision-item"><div><strong>三大子計畫</strong><span>人才培育、企業服務、90 天示範。</span></div></div>
+          <div class="decision-item"><div><strong>第一示範企業</strong><span>ASML 優先，需確認窗口與 LOI。</span></div></div>
+          <div class="decision-item"><div><strong>補助路線</strong><span>DIGITAL+ 立即決策，智慧雨林佈局 116 年。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="chapters">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Three Chapters</p>
+            <h2>三大子計畫，把願景拆成可執行的產品線。</h2>
+          </div>
+          <p>每張卡都是 5/11 會議可以單獨討論、單獨分工、單獨包裝補助或商業案的模組。</p>
+        </div>
+        <div class="chapter-grid">
+          <article class="chapter-card reveal">
+            <div class="chapter-media">
+              <img src="assets/thumb-platform.png" alt="AI 健康平台簡報視覺">
+              <span class="chapter-index">A</span>
+            </div>
+            <div class="chapter-body">
+              <h3>AI 健康促進人才培育與認證</h3>
+              <p>中信科大發證與培訓，本一提供平台、業師、企業題目與實作場域。</p>
+              <ul class="mini-list">
+                <li>AI 體適能檢測員、健康處方師、企業健康數據分析師。</li>
+                <li>24/40/60/80 小時課程版本，對接科學園區人才培育。</li>
+                <li>5/11 要確認主持人、師資、課程與發證流程。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="chapter-card reveal">
+            <div class="chapter-media">
+              <img src="assets/thumb-roadmap.png" alt="合作路線圖簡報視覺">
+              <span class="chapter-index">B</span>
+            </div>
+            <div class="chapter-body">
+              <h3>南科企業健康促進服務</h3>
+              <p>從企業健康鑑定、方案設計、平台導入，到 ESG/職安健康報告。</p>
+              <ul class="mini-list">
+                <li>把員工健康促進從活動型支出轉為可量測服務。</li>
+                <li>企業端只看去識別化彙總資料，降低個資風險。</li>
+                <li>優先拜訪 ASML、半導體供應鏈與園區大型企業。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="chapter-card reveal">
+            <div class="chapter-media">
+              <img src="assets/thumb-ecosystem.png" alt="產官學服務生態系簡報視覺">
+              <span class="chapter-index">C</span>
+            </div>
+            <div class="chapter-body">
+              <h3>ASML / 南科企業 90 天示範案</h3>
+              <p>用最小可行示範，建立可對外發表、可申請補助、可複製銷售的樣板。</p>
+              <ul class="mini-list">
+                <li>200 人以上試辦，完成體適能檢測與個人化健康建議。</li>
+                <li>交付企業 dashboard、結案報告、擴大導入 SOW。</li>
+                <li>示範案報價帶 NT$2M，完整導入 NT$8M-12M。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section radar" id="radar">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Grant Radar</p>
+            <h2>補助不是全部都追。先看期限、資格、誰能當主申請。</h2>
+          </div>
+          <div class="radar-visual">
+            <p>點選篩選器切換優先級。這裡把 5/11 前最需要做判斷的計畫放在前面。</p>
+            <img class="radar-art" src="assets/grant-radar-illustration.png" alt="補助雷達摘要插圖，包含期限、政府計畫、企業場域與 AI 健康服務符號">
+          </div>
+        </div>
+        <div class="filters" role="toolbar" aria-label="補助篩選">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="filter" type="button" data-filter="urgent" aria-pressed="false">本週急件</button>
+          <button class="filter" type="button" data-filter="next" aria-pressed="false">下一輪布局</button>
+          <button class="filter" type="button" data-filter="partner" aria-pressed="false">需企業主導</button>
+        </div>
+        <div class="grant-grid">
+          <article class="grant-card reveal" data-type="urgent">
+            <div class="tag-row"><span class="tag hot">T0</span><span class="tag hot">5/5 12:00</span></div>
+            <h3>臺南地方型 SBIR</h3>
+            <p>本機文件有「已申請」說法，第一動作是確認系統送件紀錄。若未送件，不建議硬衝。</p>
+            <div class="meter" aria-label="適配度 82%"><span style="--w:82%"></span></div>
+          </article>
+          <article class="grant-card reveal" data-type="urgent">
+            <div class="tag-row"><span class="tag hot">T0</span><span class="tag hot">5/18 17:00</span></div>
+            <h3>DIGITAL+ 數位服務創新補助</h3>
+            <p>最值得本一短期評估的中央案。以 AI 健康促進 SaaS 與企業 dashboard 包裝。</p>
+            <div class="meter" aria-label="適配度 90%"><span style="--w:90%"></span></div>
+          </article>
+          <article class="grant-card reveal" data-type="partner">
+            <div class="tag-row"><span class="tag">T1</span><span class="tag">園區企業主導</span></div>
+            <h3>南科新興科技應用計畫</h3>
+            <p>需園區科學事業作申請機構，至少結合 1 家學研機構。ASML 是否願意出面是關鍵。</p>
+            <div class="meter" aria-label="適配度 86%"><span style="--w:86%"></span></div>
+          </article>
+          <article class="grant-card reveal" data-type="next">
+            <div class="tag-row"><span class="tag wait">T1</span><span class="tag wait">116 年預備</span></div>
+            <h3>智慧雨林健康照護領域</h3>
+            <p>115 年度多已截止，但非常適合本案長期主線。用中信範本先搭計畫書骨架。</p>
+            <div class="meter" aria-label="適配度 88%"><span style="--w:88%"></span></div>
+          </article>
+          <article class="grant-card reveal" data-type="next">
+            <div class="tag-row"><span class="tag wait">T1</span><span class="tag wait">人才路線</span></div>
+            <h3>科學園區人才培育補助</h3>
+            <p>適合中信科大主導課程，搭配本一業師、平台、企業題目與見習場域。</p>
+            <div class="meter" aria-label="適配度 84%"><span style="--w:84%"></span></div>
+          </article>
+          <article class="grant-card reveal" data-type="next">
+            <div class="tag-row"><span class="tag">T2</span><span class="tag">中長期研發</span></div>
+            <h3>A+ 企業創新研發淬鍊</h3>
+            <p>可包裝成 AI 健康風險預測與數據治理平台，但審查強度高，不搶本週主線。</p>
+            <div class="meter" aria-label="適配度 64%"><span style="--w:64%"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Week Sprint</p>
+            <h2>5/5 到 5/11，把資料包推到可開會、可申請、可約訪。</h2>
+          </div>
+          <p>切換日期查看每日任務。手機版可左右滑動日期。</p>
+        </div>
+        <div class="timeline-shell">
+          <div class="day-tabs" role="tablist" aria-label="一週行動計畫">
+            <button class="day-tab" type="button" role="tab" aria-selected="true" aria-controls="day-1" id="tab-1">期限盤點 <span>5/5</span></button>
+            <button class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="day-2" id="tab-2">技術證據 <span>5/6</span></button>
+            <button class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="day-3" id="tab-3">補助決策 <span>5/7</span></button>
+            <button class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="day-4" id="tab-4">SOW 簡報 <span>5/8</span></button>
+            <button class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="day-5" id="tab-5">內部審查 <span>5/9</span></button>
+            <button class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="day-6" id="tab-6">定稿會議 <span>5/10-11</span></button>
+          </div>
+          <div>
+            <section class="day-panel is-active" role="tabpanel" id="day-1" aria-labelledby="tab-1">
+              <h3>5/5 期限與資料盤點</h3>
+              <p class="lead">今天的目標是排除錯誤進度，尤其是臺南 SBIR 是否真的送件。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>確認臺南地方型 SBIR 系統送件紀錄、編號、附件與版本。</span></li>
+                <li><span class="check">2</span><span>整理公司登記、營業項目、財報、非陸資、非拒往與補助紀錄。</span></li>
+                <li><span class="check">3</span><span>開立 Grant Tracker v0.2，更新補助期限與申請資格。</span></li>
+                <li><span class="check">4</span><span>建立 ASML 90 天 SOW 文件骨架。</span></li>
+              </ul>
+            </section>
+            <section class="day-panel" role="tabpanel" id="day-2" aria-labelledby="tab-2">
+              <h3>5/6 技術與證據</h3>
+              <p class="lead">把本一科技的能力從簡報語言轉成申請書與企業審查能用的附件。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>整理 TaiOne Care GPT、HIS Copilot、BodyCam、LineBot、dashboard 能力。</span></li>
+                <li><span class="check">2</span><span>完成技術架構圖、資料流程圖、資安個資附件目錄。</span></li>
+                <li><span class="check">3</span><span>彙整可公開獎項、媒體、MOU、場域驗證證據。</span></li>
+                <li><span class="check">4</span><span>做出本一科技產品能力 5 頁附件。</span></li>
+              </ul>
+            </section>
+            <section class="day-panel" role="tabpanel" id="day-3" aria-labelledby="tab-3">
+              <h3>5/7 補助路線決策</h3>
+              <p class="lead">決定 DIGITAL+ 是否進入本輪申請，並把中信科大需要補的資料講清楚。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>DIGITAL+ Go/No-Go：確認資格、預算、自籌與合作證明。</span></li>
+                <li><span class="check">2</span><span>若申請，完成 1 頁摘要與研發項目草案。</span></li>
+                <li><span class="check">3</span><span>聯絡 DIGITAL+、南科新興科技、A+、智慧雨林相關窗口。</span></li>
+                <li><span class="check">4</span><span>請中信科大補主持人、系所、課程與證書流程。</span></li>
+              </ul>
+            </section>
+            <section class="day-panel" role="tabpanel" id="day-4" aria-labelledby="tab-4">
+              <h3>5/8 示範案與主簡報</h3>
+              <p class="lead">把 5/11 的會議材料從資訊堆疊整理成可決策的故事線。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>完成 ASML 90 天 SOW v0.1。</span></li>
+                <li><span class="check">2</span><span>完成 5/11 主簡報 v0.3。</span></li>
+                <li><span class="check">3</span><span>完成示範案、DIGITAL+、智慧雨林預備案三種預算版本。</span></li>
+                <li><span class="check">4</span><span>完成 LOI / MOU / 合作意向書草案。</span></li>
+              </ul>
+            </section>
+            <section class="day-panel" role="tabpanel" id="day-5" aria-labelledby="tab-5">
+              <h3>5/9 內部審查</h3>
+              <p class="lead">確認本一承諾範圍、敏感資料、價格帶與企業對外版本。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>本一內部審查商業模式、價格與交付範圍。</span></li>
+                <li><span class="check">2</span><span>技術與資安審查：哪些可承諾、哪些保留。</span></li>
+                <li><span class="check">3</span><span>移除或匿名化病人、醫院、個人與未授權客戶資料。</span></li>
+                <li><span class="check">4</span><span>確認 5/11 要請中信科大決策的清單。</span></li>
+              </ul>
+            </section>
+            <section class="day-panel" role="tabpanel" id="day-6" aria-labelledby="tab-6">
+              <h3>5/10-5/11 定稿與會議</h3>
+              <p class="lead">把文件包定稿，會中直接收斂主計畫名稱、企業示範、補助申請與分工。</p>
+              <ul class="task-list">
+                <li><span class="check">1</span><span>主簡報、ASML SOW、補助比較表、資安附件定稿。</span></li>
+                <li><span class="check">2</span><span>5/11 會中確認主持人、課程、證書、場域與 LOI 流程。</span></li>
+                <li><span class="check">3</span><span>決定 DIGITAL+ 是否申請、ASML 是否優先。</span></li>
+                <li><span class="check">4</span><span>會後 24 小時內發出任務分工與下一週節點。</span></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sow" id="sow">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Pilot Storyboard</p>
+            <h2>90 天示範案，用最短路徑做出南科可複製樣板。</h2>
+          </div>
+          <p>這一段可直接當作 ASML 或其他南科大型企業約訪時的提案大綱。</p>
+        </div>
+        <div class="sow-layout">
+          <div class="phase-board">
+            <article class="phase reveal">
+              <div class="phase-time">Day 0-14</div>
+              <div><h3>啟動與需求訪談</h3><p>HR、職安、IT、法務訪談，確認員工族群、資料治理與資安要求。</p></div>
+            </article>
+            <article class="phase reveal">
+              <div class="phase-time">Day 15-30</div>
+              <div><h3>流程與系統準備</h3><p>檢測流程、同意書、LineBot/App、dashboard 指標設定與測試。</p></div>
+            </article>
+            <article class="phase reveal">
+              <div class="phase-time">Day 31-60</div>
+              <div><h3>示範服務執行</h3><p>員工檢測、健康處方、追蹤提醒、課程活動與營運週報。</p></div>
+            </article>
+            <article class="phase reveal">
+              <div class="phase-time">Day 61-75</div>
+              <div><h3>數據分析與優化</h3><p>使用率、完測率、風險族群與活動成效分析，產出中期改善建議。</p></div>
+            </article>
+            <article class="phase reveal">
+              <div class="phase-time">Day 76-90</div>
+              <div><h3>結案與擴大提案</h3><p>企業彙總 dashboard、結案報告、年度導入規劃與正式 SOW。</p></div>
+            </article>
+          </div>
+          <aside class="kpi-panel reveal" aria-label="示範案KPI">
+            <header>
+              <p class="eyebrow">Pilot KPI</p>
+              <h3>企業端只看彙總，員工端拿到個人化回饋。</h3>
+            </header>
+            <ul class="kpi-list">
+              <li><strong>200+</strong><span>參與員工數</span></li>
+              <li><strong>80%</strong><span>完測率目標</span></li>
+              <li><strong>30%</strong><span>App/LineBot 使用率</span></li>
+              <li><strong>40+</strong><span>HR NPS</span></li>
+              <li><strong>99.5%</strong><span>平台 uptime</span></li>
+              <li><strong>0</strong><span>重大資安事件</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pack">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Meeting Pack</p>
+            <h2>把資料拆成能拿來開會、簽意向、申請補助的附件。</h2>
+          </div>
+          <p>以下連結會開啟本機 Markdown 草稿；正式對外前仍需本一確認敏感資料、法務與資安版本。</p>
+        </div>
+        <div class="pack-grid">
+          <a class="file-card reveal" href="downloads/benyi-ctbc-complete-pack.zip" download><b>ZIP</b><h3>下載全部文件</h3><span>企劃、SOW、補助摘要、原始 PDF、試算表與來源草稿。</span></a>
+          <a class="file-card reveal" href="pack_20260511/01_5月11會議議程與決策單.md"><b>01</b><h3>5/11 會議議程與決策單</h3><span>會議流程、決策、會後 24 小時任務。</span></a>
+          <a class="file-card reveal" href="pack_20260511/02_ASML_南科企業AI健康促進90天示範案_SOW_v0.1.md"><b>02</b><h3>ASML 90 天示範案 SOW</h3><span>企業約訪與 PoC 提案主文件。</span></a>
+          <a class="file-card reveal" href="pack_20260511/03_DIGITAL+_AI健康促進平台申請摘要_v0.1.md"><b>03</b><h3>DIGITAL+ 申請摘要</h3><span>5/18 前 Go/No-Go 的 1 頁底稿。</span></a>
+          <a class="file-card reveal" href="pack_20260511/04_智慧雨林健康照護_116預備計畫骨架_v0.1.md"><b>04</b><h3>智慧雨林 116 骨架</h3><span>下半年布局長期主補助路線。</span></a>
+          <a class="file-card reveal" href="pack_20260511/05_中信科大待補資料清單_20260511.md"><b>05</b><h3>中信科大待補清單</h3><span>主持人、課程、場域、發證流程。</span></a>
+          <a class="file-card reveal" href="pack_20260511/06_LOI_本一x中信科大x南科企業_草案_v0.1.md"><b>06</b><h3>三方 LOI 草案</h3><span>本一、中信、南科企業合作意向。</span></a>
+          <a class="file-card reveal" href="pack_20260511/07_AI健康平台資安個資附件_v0.1.md"><b>07</b><h3>資安個資附件</h3><span>企業 PoC 與政府補助審查必備。</span></a>
+          <a class="file-card reveal" href="doc/本一科技_下週準備資料總包_2026-05-11.md"><b>MASTER</b><h3>完整準備資料總包</h3><span>本一科技下週全部準備事項。</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sources" id="sources">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Official Sources</p>
+            <h2>對外引用以官方來源為準。</h2>
+          </div>
+          <p>網頁中的補助期限與資格判斷，對應這些官方或半官方入口。</p>
+        </div>
+        <div class="source-grid">
+          <a class="source-link" href="https://sbirtn.org.tw/" target="_blank" rel="noreferrer">臺南地方型 SBIR <span>↗</span></a>
+          <a class="source-link" href="https://digiplus.adi.gov.tw/" target="_blank" rel="noreferrer">DIGITAL+ <span>↗</span></a>
+          <a class="source-link" href="https://assist.nat.gov.tw/wSite/ct?ctNode=150&amp;mp=2&amp;xItem=289664" target="_blank" rel="noreferrer">智慧雨林產業創生 <span>↗</span></a>
+          <a class="source-link" href="https://moda.gov.tw/major-policies/ai/industry/19256" target="_blank" rel="noreferrer">智慧雨林健康照護 <span>↗</span></a>
+          <a class="source-link" href="https://www.stsp.gov.tw/web/WEB/Jsp/Page/cindex.jsp?frontTarget=DEFAULT&amp;thisRootID=728" target="_blank" rel="noreferrer">南科新興科技應用 <span>↗</span></a>
+          <a class="source-link" href="https://stsvpo.bun.tw/tw" target="_blank" rel="noreferrer">大南方新矽谷 <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mobile-cta" aria-label="手機快速操作">
+    <a href="#chapters">閱讀企劃</a>
+    <a href="#pack">資料包</a>
+  </div>
+
+  <script>
+    const body = document.body;
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    const progress = document.querySelector('.progress');
+
+    toggle.addEventListener('click', () => {
+      const next = !body.classList.contains('menu-open');
+      body.classList.toggle('menu-open', next);
+      toggle.setAttribute('aria-expanded', String(next));
+    });
+
+    nav.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.transform = `scaleX(${ratio})`;
+    }, { passive: true });
+
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.filter').forEach(item => {
+          item.setAttribute('aria-pressed', String(item === button));
+        });
+        document.querySelectorAll('.grant-card').forEach(card => {
+          card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.type !== filter);
+        });
+      });
+    });
+
+    const tabs = document.querySelectorAll('.day-tab');
+    const panels = document.querySelectorAll('.day-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+        panels.forEach(panel => panel.classList.toggle('is-active', panel.id === tab.getAttribute('aria-controls')));
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

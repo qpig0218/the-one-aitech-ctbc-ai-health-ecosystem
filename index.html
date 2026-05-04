@@ -154,8 +154,8 @@
       inset: 0;
       z-index: -2;
       background:
-        linear-gradient(90deg, rgba(17, 23, 18, .92) 0%, rgba(17, 23, 18, .68) 43%, rgba(17, 23, 18, .2) 100%),
-        linear-gradient(0deg, rgba(17, 23, 18, .88) 0%, rgba(17, 23, 18, .12) 55%, rgba(17, 23, 18, .52) 100%),
+        linear-gradient(90deg, rgba(17, 23, 18, .78) 0%, rgba(17, 23, 18, .5) 43%, rgba(17, 23, 18, .1) 100%),
+        linear-gradient(0deg, rgba(17, 23, 18, .76) 0%, rgba(17, 23, 18, .08) 55%, rgba(17, 23, 18, .38) 100%),
         url("assets/hero-the-one-aitech.png") center / cover no-repeat;
       transform: scale(1.04);
     }
@@ -218,6 +218,11 @@
       white-space: nowrap;
     }
 
+    .hero h1 span {
+      color: #f08a38;
+      text-shadow: 0 8px 28px rgba(17, 23, 18, .46);
+    }
+
     .hero-kicker {
       margin: 22px 0 0;
       max-width: 780px;
@@ -254,9 +259,9 @@
     }
 
     .stat-strip {
-      border: 1px solid rgba(255, 250, 240, .26);
-      background: rgba(17, 23, 18, .34);
-      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 250, 240, .2);
+      background: rgba(17, 23, 18, .18);
+      backdrop-filter: blur(12px);
       padding: 17px;
       border-radius: 8px;
     }
@@ -519,12 +524,7 @@
     .radar-visual {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
       align-items: center;
-    }
-
-    .radar-visual p {
-      margin: 0;
     }
 
     .radar-art {
@@ -941,7 +941,11 @@
         grid-template-columns: 1fr;
       }
       .radar-visual {
-        grid-template-columns: minmax(0, .36fr) minmax(360px, .64fr);
+        grid-template-columns: 1fr;
+      }
+      .radar-art {
+        width: min(100%, 780px);
+        justify-self: center;
       }
       .hero-inner { padding-top: 108px; }
       .cover-stats {
@@ -970,7 +974,7 @@
       .hero { min-height: 92svh; }
       .hero::before {
         background:
-          linear-gradient(0deg, rgba(17, 23, 18, .96) 0%, rgba(17, 23, 18, .54) 62%, rgba(17, 23, 18, .72) 100%),
+          linear-gradient(0deg, rgba(17, 23, 18, .84) 0%, rgba(17, 23, 18, .36) 62%, rgba(17, 23, 18, .52) 100%),
           url("assets/hero-the-one-aitech.png") 66% center / cover no-repeat;
       }
       .hero-inner {
@@ -1096,7 +1100,7 @@
             <b>Issue 2026.05</b>
             <span>Southern Taiwan AI Health Dossier</span>
           </div>
-          <h1 id="hero-title"><span>次世代智慧健康</span><span>南科永續生態系</span></h1>
+          <h1 id="hero-title"><span>次世代智慧南科</span><span>健康促進生態系統</span></h1>
           <p class="hero-kicker">把 The One AITech 的 AI 健康平台、中信科大的健康專業人才、南科企業場域，整合成可示範、可補助、可商業化的三年合作計畫。</p>
           <div class="hero-actions">
             <a class="primary-button" href="#chapters">閱讀企劃</a>
@@ -1208,7 +1212,6 @@
             <h2>補助不是全部都追。先看期限、資格、誰能當主申請。</h2>
           </div>
           <div class="radar-visual">
-            <p>點選篩選器切換優先級。這裡把 5/11 前最需要做判斷的計畫放在前面。</p>
             <img class="radar-art" src="assets/grant-radar-illustration.png" alt="補助雷達摘要插圖，包含期限、政府計畫、企業場域與 AI 健康服務符號">
           </div>
         </div>

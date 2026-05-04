@@ -1,6 +1,16 @@
-# 本一科技 x 中信科大｜南科 AI 健康促進生態系
+# The One AITech x 中信科大｜南科 AI 健康促進生態系
 
 這個 repo 用於部署互動式企劃網頁與提供文件下載。
+
+## Published URLs
+
+- GitHub Pages: https://qpig0218.github.io/the-one-aitech-ctbc-ai-health-ecosystem/
+- Complete pack: https://qpig0218.github.io/the-one-aitech-ctbc-ai-health-ecosystem/downloads/the-one-aitech-ctbc-complete-pack.zip
+
+## 品牌命名規則
+
+本一科技的英文名稱一律使用 `The One AITech`。  
+專案網址、下載檔、英文檔名與對外英文文案禁止使用 `舊英文拼音`。
 
 ## 網頁內容
 
@@ -24,4 +34,3 @@
 - LOI 草案
 - 資安個資附件
 - 本機來源草稿、PDF 與補助比較表
-

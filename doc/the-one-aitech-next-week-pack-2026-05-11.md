@@ -113,7 +113,7 @@ The One AITech下週要準備的不是單一簡報，而是一套可以讓中信
 11. 個人化健康處方平台
 12. 企業健康數據儀表板
 13. TaiOne Care GPT / HIS Copilot 延伸能力
-14. BodyCam / LineBot / e-Portfolio 延伸能力
+14. BodyCam / LINEBot / e-Portfolio 延伸能力
 15. 中信科大角色與可投入資源
 16. 南科企業價值主張
 17. ASML 示範 SOW 摘要
@@ -170,7 +170,7 @@ The One AITech下週要準備的不是單一簡報，而是一套可以讓中信
 
 | 資料 | 內容 | 來源 |
 |---|---|---|
-| The One AITech產品矩陣 | TaiOne Care GPT、HIS Copilot、BodyCam、LineBot、AI e-Portfolio、AI Clinical Navigator | Canva `2025The One AITech產品介紹`、Drive 作品說明書 |
+| The One AITech產品矩陣 | TaiOne Care GPT、HIS Copilot、BodyCam、LINEBot、AI e-Portfolio、AI Clinical Navigator | Canva `2025The One AITech產品介紹`、Drive 作品說明書 |
 | AI 健康促進平台架構圖 | 檢測、處方、追蹤、企業儀表板、資料治理 | 本機 PDF + B1 |
 | 企業健康儀表板 mockup | HR/ESG/職安/健康促進用彙總指標 | 需製作 |
 | 資料流程圖 | 蒐集、去識別化、分析、回饋、彙總報表 | Drive 資安政策 |
@@ -238,7 +238,7 @@ The One AITech下週要準備的不是單一簡報，而是一套可以讓中信
 1. 課程架構 v0.1：AI 體適能檢測員、AI 健康處方師、企業健康數據分析師、AI 健康關懷員。
 2. 每門課時數、對象、考核方式、證書名稱草案。
 3. 中信科大可投入教師/心理師/社工師/運動健康師角色表。
-4. The One AITech平台實作題目：健康檢測、個人化處方、企業 dashboard、LineBot 關懷。
+4. The One AITech平台實作題目：健康檢測、個人化處方、企業 dashboard、LINEBot 關懷。
 5. 116 學年度科學園區人才培育補助預備計畫架構。
 
 ### 子計畫 B：南科企業健康促進服務與品牌健康鑑定
@@ -260,7 +260,7 @@ The One AITech下週要準備的不是單一簡報，而是一套可以讓中信
 1. ASML 90 天 SOW v0.1。
 2. 試辦目標：200 人以上參與、完成體適能檢測、個人化健康建議、企業彙總 dashboard。
 3. 交付物：啟動訪談、健康檢測流程、員工回饋、企業報告、擴大導入提案。
-4. 成功 KPI：參與率、完測率、APP/LineBot 使用率、HR NPS、平台 uptime、資安事件 0。
+4. 成功 KPI：參與率、完測率、LINEBot 使用率、HR NPS、平台 uptime、資安事件 0。
 5. 試辦價格帶：90 天示範案 200 萬元；24 個月完整導入 800-1,200 萬元；SaaS 月費另列。
 
 ---
@@ -276,7 +276,7 @@ The One AITech下週要準備的不是單一簡報，而是一套可以讓中信
 
 ### 5/6（三）：技術與證據日
 
-1. 從 Drive/Canva 摘出The One AITech產品能力、TaiOne Care GPT、BodyCam、LineBot、HIS Copilot。
+1. 從 Drive/Canva 摘出The One AITech產品能力、TaiOne Care GPT、BodyCam、LINEBot、HIS Copilot。
 2. 完成技術架構圖、資料流程圖、資安個資附件目錄。
 3. 彙整可公開獎項、媒體、MOU、場域驗證證據。
 4. 製作「The One AITech產品能力 5 頁附件」。

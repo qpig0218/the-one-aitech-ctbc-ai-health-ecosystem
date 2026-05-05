@@ -1477,10 +1477,16 @@
       }
       h1 {
         max-width: none;
-        font-size: clamp(38px, 12vw, 54px);
+        font-size: 38px;
+      }
+      .hero h1 span,
+      .hero-kicker {
+        max-width: 100%;
       }
       .hero-kicker {
         font-size: 17px;
+        overflow-wrap: break-word;
+        text-wrap: pretty;
       }
       .hero-actions {
         display: none;
@@ -1613,6 +1619,12 @@
       .scroll-cue { display: none; }
     }
 
+    @media (max-width: 370px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
@@ -1648,10 +1660,10 @@
         <div>
           <div class="issue-line">
             <b>Issue 2026.05</b>
-            <span>Southern Taiwan AI Health Dossier</span>
+            <span>為護國神山，種下一座健康森林。</span>
           </div>
-          <h1 id="hero-title"><span>次世代智慧南科</span><span>健康促進生態系統</span></h1>
-          <p class="hero-kicker">把本一科技的 AI 健康平台、中信科大的健康專業人才、南科企業場域，整合成可示範、可補助、可商業化的三年合作計畫。</p>
+          <h1 id="hero-title"><span>打造次世代智慧南科</span><span>健康促進生態系統</span></h1>
+          <p class="hero-kicker">從護國神山，到健康森林。<br>本一科技攜手中信科大，以 AI 智慧健康平台結合健康促進與體適能專業，協助產業打造可持續的員工健康生態系，讓臺灣的科技實力，不只跑得快，也走得長遠。</p>
           <div class="hero-actions">
             <a class="primary-button" href="#chapters">閱讀企劃</a>
             <a class="ghost-button" href="pack_20260511/00_資料包索引.md">開啟資料包索引</a>
@@ -1773,7 +1785,7 @@
             <p class="eyebrow">Ecosystem Flywheel</p>
             <h2>三項子計劃不是三個案子，而是一個會自我放大的飛輪。</h2>
           </div>
-          <p>根據 B1 與 B6：先培育人才，再服務企業，用示範案取得補助與南科信任，最後把案例回流成下一輪課程與服務。</p>
+          <p>先培育人才，再服務企業，用示範案取得補助與南科信任，最後把案例回流成下一輪課程與服務。</p>
         </div>
         <div class="flywheel-shell">
           <div class="flywheel-core reveal">
@@ -1947,7 +1959,7 @@
             <p class="eyebrow">Tainan Base Decision</p>
             <h2>台南據點先給生態系一個可被看見的落點。</h2>
           </div>
-          <p>根據 B3：不用一開始就重資產設公司，先把 TTA 沙崙作為對外台南據點，再用營收、MOU 與補助結果決定是否升級。</p>
+          <p>不用一開始就重資產設公司，先把 TTA 沙崙作為對外台南據點，再用營收、MOU 與補助結果決定是否升級。</p>
         </div>
         <div class="path-grid">
           <article class="path-card reveal">
@@ -2066,7 +2078,7 @@
             <p class="eyebrow">Six-Month Roadmap</p>
             <h2>5 月到 10 月，把會議結論推成可發表、可收費、可申請的節奏。</h2>
           </div>
-          <p>根據 B6：媒體不要太早，先把 MOU、認證、示範案與補助證據做出來，再讓南科與企業願意擴大。</p>
+          <p>媒體不要太早，先把 MOU、認證、示範案與補助證據做出來，再讓南科與企業願意擴大。</p>
         </div>
         <div class="roadmap-track" aria-label="5月到10月推進藍圖">
           <article class="roadmap-month reveal">

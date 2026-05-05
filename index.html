@@ -1344,6 +1344,27 @@
 
     .source-link:hover { background: rgba(246, 240, 227, .08); color: #fffaf0; }
 
+    .site-footer {
+      background: var(--ink);
+      color: rgba(246, 240, 227, .78);
+      border-top: 1px solid rgba(246, 240, 227, .12);
+      padding: 18px 0 22px;
+    }
+
+    .site-footer .wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.8;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
     .mobile-cta {
       display: none;
       position: fixed;
@@ -1605,6 +1626,9 @@
       .day-tab {
         min-width: 148px;
         display: grid;
+      }
+      .site-footer {
+        padding-bottom: 84px;
       }
       .phase {
         grid-template-columns: 1fr;
@@ -2257,6 +2281,12 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer" aria-label="頁尾註記">
+    <div class="wrap">
+      <p>本一科技（The One AITech Co., Ltd.）X 中信科大｜爲護國神山，種下一座健康森林</p>
+    </div>
+  </footer>
 
   <div class="mobile-cta" aria-label="手機快速操作">
     <a href="#chapters">閱讀企劃</a>

@@ -511,6 +511,330 @@
       margin-top: 8px;
     }
 
+    .chapter-tags,
+    .grant-meta,
+    .module-tags,
+    .roadmap-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .chapter-tags { margin: 0 0 14px; }
+
+    .chapter-tags span,
+    .grant-meta span,
+    .module-tags span,
+    .roadmap-tags span,
+    .trigger-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 850;
+      color: var(--teal-dark);
+      background: rgba(0, 124, 114, .1);
+      border: 1px solid rgba(0, 124, 114, .18);
+    }
+
+    .icon-chip {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fffaf0;
+      background: rgba(0, 124, 114, .78);
+      border: 1px solid rgba(255, 250, 240, .48);
+      box-shadow: 0 12px 28px rgba(17, 23, 18, .22);
+    }
+
+    .icon-chip svg,
+    .sketch-icon svg,
+    .orbit-icon svg,
+    .path-icon svg {
+      width: 25px;
+      height: 25px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .flywheel {
+      background:
+        radial-gradient(circle at 82% 16%, rgba(230, 98, 46, .12), transparent 22rem),
+        linear-gradient(90deg, rgba(17, 23, 18, .035) 1px, transparent 1px),
+        #fffaf0;
+      background-size: auto, 36px 36px, auto;
+    }
+
+    .flywheel-shell {
+      display: grid;
+      grid-template-columns: minmax(0, .34fr) minmax(0, .66fr);
+      gap: clamp(26px, 4vw, 52px);
+      align-items: center;
+    }
+
+    .flywheel-shell > *,
+    .stakeholder-layout > *,
+    .sow-layout > *,
+    .timeline-shell > * {
+      min-width: 0;
+    }
+
+    .flywheel-core {
+      border: 1px solid rgba(17, 23, 18, .14);
+      border-radius: 10px;
+      padding: clamp(22px, 4vw, 34px);
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flywheel-core::after {
+      content: "";
+      position: absolute;
+      inset: auto -28px -42px auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 28px solid rgba(230, 98, 46, .2);
+    }
+
+    .flywheel-core h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.02;
+    }
+
+    .flywheel-core p {
+      position: relative;
+      margin: 18px 0 0;
+      color: rgba(246, 240, 227, .78);
+      font-size: 17px;
+    }
+
+    .flywheel-track {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .flywheel-card {
+      position: relative;
+      min-height: 238px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px 14px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 14px 36px rgba(17, 23, 18, .08);
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+
+    .flywheel-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -13px;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--mono);
+      font-weight: 900;
+      color: #fffaf0;
+      background: var(--signal);
+      box-shadow: 0 8px 20px rgba(230, 98, 46, .28);
+    }
+
+    .sketch-icon,
+    .path-icon,
+    .orbit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      background: rgba(0, 124, 114, .1);
+      border: 1px dashed rgba(0, 124, 114, .38);
+    }
+
+    .flywheel-card b,
+    .path-card b,
+    .roadmap-month b {
+      font-family: var(--mono);
+      color: var(--signal);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .flywheel-card h3,
+    .path-card h3,
+    .roadmap-month h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.08;
+    }
+
+    .flywheel-card p,
+    .path-card p,
+    .roadmap-month p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .loop-note {
+      margin-top: 14px;
+      border: 1px dashed rgba(0, 124, 114, .32);
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: rgba(0, 124, 114, .07);
+      color: var(--teal-dark);
+      font-weight: 800;
+    }
+
+    .stakeholders {
+      background: var(--ink);
+      color: var(--paper);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stakeholders::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(0, 124, 114, .32), transparent 25rem),
+        radial-gradient(circle at 90% 76%, rgba(230, 98, 46, .2), transparent 26rem);
+      pointer-events: none;
+    }
+
+    .stakeholders .wrap { position: relative; }
+    .stakeholders .section-head p,
+    .stakeholders .eyebrow { color: rgba(246, 240, 227, .72); }
+
+    .stakeholder-layout {
+      display: grid;
+      grid-template-columns: minmax(330px, .42fr) minmax(0, .58fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .stakeholder-orbit {
+      min-height: 460px;
+      position: relative;
+      border: 1px solid rgba(246, 240, 227, .18);
+      border-radius: 10px;
+      background:
+        radial-gradient(circle, rgba(246, 240, 227, .08) 0 1px, transparent 2px),
+        rgba(246, 240, 227, .05);
+      background-size: 26px 26px;
+      overflow: hidden;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      inset: 11%;
+      border: 1px dashed rgba(246, 240, 227, .26);
+      border-radius: 50%;
+    }
+
+    .orbit-ring:nth-child(2) { inset: 25%; opacity: .72; }
+
+    .orbit-core {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: 170px;
+      min-height: 170px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      background: #fffaf0;
+      color: var(--ink);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, .24);
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .orbit-node {
+      position: absolute;
+      min-width: 118px;
+      border: 1px solid rgba(246, 240, 227, .22);
+      border-radius: 999px;
+      padding: 9px 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(246, 240, 227, .1);
+      backdrop-filter: blur(10px);
+      color: rgba(246, 240, 227, .88);
+      font-weight: 850;
+      font-size: 13px;
+    }
+
+    .orbit-node:nth-of-type(1) { left: 50%; top: 30px; transform: translateX(-50%); }
+    .orbit-node:nth-of-type(2) { right: 24px; top: 34%; }
+    .orbit-node:nth-of-type(3) { right: 18%; bottom: 34px; }
+    .orbit-node:nth-of-type(4) { left: 16%; bottom: 42px; }
+    .orbit-node:nth-of-type(5) { left: 20px; top: 34%; }
+
+    .stakeholder-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stakeholder-card {
+      border: 1px solid rgba(246, 240, 227, .16);
+      border-radius: 10px;
+      padding: 16px;
+      background: rgba(246, 240, 227, .08);
+      display: grid;
+      gap: 10px;
+    }
+
+    .stakeholder-card h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .stakeholder-card p {
+      margin: 0;
+      color: rgba(246, 240, 227, .72);
+      font-size: 14px;
+    }
+
+    .stakeholder-card strong {
+      color: #fffaf0;
+    }
+
     .radar {
       background: var(--mist);
     }
@@ -621,6 +945,126 @@
       border-radius: inherit;
     }
 
+    .tainan-base {
+      background:
+        radial-gradient(circle at 18% 14%, rgba(192, 155, 69, .15), transparent 22rem),
+        var(--paper);
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      position: relative;
+    }
+
+    .path-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px;
+      background: rgba(255, 250, 240, .72);
+      box-shadow: 0 16px 42px rgba(17, 23, 18, .08);
+      display: grid;
+      gap: 12px;
+    }
+
+    .path-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 43px;
+      right: -22px;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--signal));
+      z-index: 2;
+    }
+
+    .trigger-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .roadmap {
+      background: #fffaf0;
+      overflow: hidden;
+    }
+
+    .roadmap-track {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      gap: 10px;
+      position: relative;
+    }
+
+    .roadmap-track::before {
+      content: "";
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      top: 34px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--gold), var(--signal));
+      opacity: .45;
+    }
+
+    .roadmap-month {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 14px 16px;
+      background: rgba(246, 240, 227, .82);
+      display: grid;
+      gap: 10px;
+      min-height: 260px;
+      align-content: start;
+    }
+
+    .roadmap-month::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 5px solid var(--teal);
+      box-shadow: 0 0 0 5px rgba(0, 124, 114, .1);
+      margin-bottom: 8px;
+      z-index: 1;
+    }
+
+    .roadmap-month:nth-child(2)::before,
+    .roadmap-month:nth-child(5)::before { border-color: var(--gold); }
+
+    .roadmap-month:nth-child(3)::before,
+    .roadmap-month:nth-child(6)::before { border-color: var(--signal); }
+
+    .roadmap-month ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+
+    .roadmap-month li {
+      color: var(--ink-soft);
+      font-size: 13px;
+      display: grid;
+      grid-template-columns: 10px 1fr;
+      gap: 8px;
+    }
+
+    .roadmap-month li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: var(--signal);
+    }
+
     .timeline-shell {
       display: grid;
       grid-template-columns: minmax(240px, .32fr) minmax(0, .68fr);
@@ -724,6 +1168,38 @@
       grid-template-columns: minmax(0, .7fr) minmax(290px, .3fr);
       gap: 24px;
       align-items: start;
+    }
+
+    .pilot-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pilot-modules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .module-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      background: rgba(255, 250, 240, .72);
+      display: grid;
+      gap: 9px;
+    }
+
+    .module-card h3 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .module-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 13px;
     }
 
     .phase-board {
@@ -934,6 +1410,8 @@
       .manifesto .wrap,
       .section-head,
       .sow-layout,
+      .flywheel-shell,
+      .stakeholder-layout,
       .timeline-shell {
         grid-template-columns: 1fr;
       }
@@ -954,12 +1432,27 @@
       .chapter-grid,
       .grant-grid,
       .pack-grid,
-      .source-grid {
+      .source-grid,
+      .stakeholder-cards,
+      .path-grid {
         grid-template-columns: 1fr 1fr;
+      }
+      .flywheel-track {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .flywheel-card:not(:last-child)::after,
+      .path-card:not(:last-child)::after {
+        display: none;
+      }
+      .stakeholder-orbit {
+        min-height: 360px;
       }
       .day-tabs,
       .kpi-panel {
         position: static;
+      }
+      .pilot-modules {
+        grid-template-columns: 1fr;
       }
       .day-tabs {
         grid-template-columns: repeat(2, 1fr);
@@ -1029,8 +1522,64 @@
       .chapter-grid,
       .grant-grid,
       .pack-grid,
-      .source-grid {
+      .source-grid,
+      .stakeholder-cards,
+      .path-grid {
         grid-template-columns: 1fr;
+      }
+      .flywheel-track,
+      .roadmap-track {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 2px 2px 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .flywheel-card,
+      .roadmap-month {
+        min-width: 78vw;
+        scroll-snap-align: start;
+      }
+      .loop-note {
+        font-size: 14px;
+      }
+      .stakeholder-orbit {
+        min-height: 0;
+        padding: 18px;
+        display: grid;
+        gap: 10px;
+      }
+      .orbit-ring,
+      .orbit-core,
+      .orbit-node {
+        position: static;
+        transform: none;
+      }
+      .orbit-node:nth-of-type(1),
+      .orbit-node:nth-of-type(2),
+      .orbit-node:nth-of-type(3),
+      .orbit-node:nth-of-type(4),
+      .orbit-node:nth-of-type(5) {
+        inset: auto;
+        transform: none;
+      }
+      .orbit-ring {
+        display: none;
+      }
+      .orbit-core {
+        width: auto;
+        min-height: 0;
+        border-radius: 10px;
+        font-size: 24px;
+      }
+      .orbit-node {
+        width: 100%;
+      }
+      .roadmap-track::before {
+        display: none;
       }
       .chapter-card {
         min-height: 0;
@@ -1085,6 +1634,7 @@
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">選單</button>
     <nav class="nav" id="site-nav">
       <a href="#chapters">三項計劃</a>
+      <a href="#flywheel">生態飛輪</a>
       <a href="#radar">補助雷達</a>
       <a href="#timeline">一週行動</a>
       <a href="#sow">90 天示範</a>
@@ -1159,10 +1709,14 @@
             <div class="chapter-media">
               <img src="assets/thumb-platform.png" alt="AI 健康平台簡報視覺">
               <span class="chapter-index">A</span>
+              <span class="icon-chip" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 8h10M7 12h7M7 16h10"/><path d="M5 4h14a1 1 0 0 1 1 1v14l-4-2H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/></svg>
+              </span>
             </div>
             <div class="chapter-body">
               <h3>AI 健康促進人才培育與認證</h3>
               <p>中信科大發證與培訓，本一科技提供平台、業師、企業題目與實作場域。</p>
+              <div class="chapter-tags" aria-label="人才培育重點"><span>中信發證</span><span>24-80 小時</span><span>企業實作</span></div>
               <ul class="mini-list">
                 <li>AI 體適能檢測員、健康處方師、企業健康數據分析師。</li>
                 <li>24/40/60/80 小時課程版本，對接科學園區人才培育。</li>
@@ -1174,10 +1728,14 @@
             <div class="chapter-media">
               <img src="assets/thumb-roadmap.png" alt="合作路線圖簡報視覺">
               <span class="chapter-index">B</span>
+              <span class="icon-chip" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 18c4-8 12-8 16-1"/><path d="M6 15l3 3 4-7 5 5"/><path d="M5 6h4M15 6h4"/></svg>
+              </span>
             </div>
             <div class="chapter-body">
               <h3>南科企業健康促進服務</h3>
               <p>從企業健康鑑定、方案設計、平台導入，到 ESG/職安健康報告。</p>
+              <div class="chapter-tags" aria-label="企業服務重點"><span>健康鑑定</span><span>ESG 量化</span><span>南科廠商</span></div>
               <ul class="mini-list">
                 <li>把員工健康促進從活動型支出轉為可量測服務。</li>
                 <li>企業端只看去識別化彙總資料，降低個資風險。</li>
@@ -1189,10 +1747,14 @@
             <div class="chapter-media">
               <img src="assets/thumb-ecosystem.png" alt="產官學服務生態系簡報視覺">
               <span class="chapter-index">C</span>
+              <span class="icon-chip" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v6"/><path d="M6 21h12"/><path d="M8 21V10h8v11"/><path d="M5 10h14"/><path d="M9 14h2M13 14h2M9 18h2M13 18h2"/></svg>
+              </span>
             </div>
             <div class="chapter-body">
               <h3>ASML / 中小企業 90 天示範案</h3>
               <p>以 50 人左右試辦規模建立可對外發表、可申請補助、可複製銷售的樣板。</p>
+              <div class="chapter-tags" aria-label="示範案重點"><span>50 人試辦</span><span>M1 + M3</span><span>可複製 SOW</span></div>
               <ul class="mini-list">
                 <li>約 50 人試辦，完成體適能檢測與個人化健康建議。</li>
                 <li>交付企業 dashboard、結案報告、擴大導入 SOW。</li>
@@ -1200,6 +1762,116 @@
               </ul>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flywheel" id="flywheel">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ecosystem Flywheel</p>
+            <h2>三項子計劃不是三個案子，而是一個會自我放大的飛輪。</h2>
+          </div>
+          <p>根據 B1 與 B6：先培育人才，再服務企業，用示範案取得補助與南科信任，最後把案例回流成下一輪課程與服務。</p>
+        </div>
+        <div class="flywheel-shell">
+          <div class="flywheel-core reveal">
+            <p class="eyebrow">Core Logic</p>
+            <h3>大智本_健康聯盟</h3>
+            <p>本一科技提供 AI 平台與企業通路，中信科大提供學術背書與健康專業人才，南科企業提供真實場域。</p>
+          </div>
+          <div>
+            <div class="flywheel-track" aria-label="生態系飛輪流程">
+              <article class="flywheel-card reveal">
+                <span class="sketch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 19V5l6-2 6 2v14"/><path d="M9 9h6M9 13h6M9 17h6"/></svg></span>
+                <b>01 Certify</b>
+                <h3>中信發證</h3>
+                <p>AI 體適能檢測員、健康處方師、企業健康數據分析師，形成南科可辨識的人才池。</p>
+              </article>
+              <article class="flywheel-card reveal">
+                <span class="sketch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18c3-5 5-7 8-7s5 2 8 7"/><path d="M8 18l4-9 4 9"/></svg></span>
+                <b>02 Serve</b>
+                <h3>企業鑑定</h3>
+                <p>用健康促進實質效益鑑定切入 HR、職安、ESG，讓企業需求變成可交付服務。</p>
+              </article>
+              <article class="flywheel-card reveal">
+                <span class="sketch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 17V8l5-3 5 3v9"/><path d="M10 17v-5h4v5"/></svg></span>
+                <b>03 Prove</b>
+                <h3>90 天示範</h3>
+                <p>先做 ASML 或 50 人左右中小企業試辦，交付 dashboard、結案報告與正式導入 SOW。</p>
+              </article>
+              <article class="flywheel-card reveal">
+                <span class="sketch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17h16"/><path d="M7 17V7h10v10"/><path d="M9 10h6M9 13h4"/><path d="M6 20h12"/></svg></span>
+                <b>04 Fund</b>
+                <h3>補助與標案</h3>
+                <p>DIGITAL+ 做短期決策，智慧雨林與南科新興科技應用做 116 年與園區企業路線。</p>
+              </article>
+              <article class="flywheel-card reveal">
+                <span class="sketch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M4 12h3M17 12h3M12 4v3M12 17v3"/><path d="M9 12h6"/></svg></span>
+                <b>05 Scale</b>
+                <h3>回流放大</h3>
+                <p>示範案例回到課程、鑑定方法與媒體故事，讓第二批企業與第二批學員更快進場。</p>
+              </article>
+            </div>
+            <div class="loop-note reveal">回流機制：示範案資料 → 課程案例 → 新人才 → 新企業服務 → 下一輪補助與南科合作。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stakeholders" id="stakeholders">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Stakeholder Map</p>
+            <h2>每個人都要知道：他為什麼要進來，進來後拿到什麼。</h2>
+          </div>
+          <p>利害關係人地圖不是名單，而是 5/11 之後的接觸順序與價值主張。先用示範案當信使，再逐步打開政府與產業資源。</p>
+        </div>
+        <div class="stakeholder-layout">
+          <div class="stakeholder-orbit reveal" aria-label="南科健康聯盟五圈利害關係人">
+            <div class="orbit-ring" aria-hidden="true"></div>
+            <div class="orbit-ring" aria-hidden="true"></div>
+            <div class="orbit-core">本一科技<br>×<br>中信科大</div>
+            <span class="orbit-node"><span class="orbit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16M6 10v9M18 10v9M3 19h18"/><path d="M12 4l8 6H4z"/></svg></span>中央</span>
+            <span class="orbit-node"><span class="orbit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20V8l7-4 7 4v12"/><path d="M9 20v-6h6v6"/></svg></span>地方</span>
+            <span class="orbit-node"><span class="orbit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l5 3V9l5 3V8l6 4v8"/><path d="M7 16h2M12 16h2M17 16h2"/></svg></span>產業</span>
+            <span class="orbit-node"><span class="orbit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l8-4 8 4-8 4z"/><path d="M6 11v4c2 2 10 2 12 0v-4"/></svg></span>學校</span>
+            <span class="orbit-node"><span class="orbit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8h14M7 8c0 4 10 4 10 0M6 16h12"/></svg></span>Sponsor</span>
+          </div>
+          <div class="stakeholder-cards">
+            <article class="stakeholder-card reveal">
+              <h3>中央：南科局 / 國科會</h3>
+              <p><strong>價值：</strong>區內健康促進政績、大南方與智慧醫療的具體案例。</p>
+              <p><strong>下一步：</strong>7 月後以示範 SOW 與學校背書正式遞案。</p>
+            </article>
+            <article class="stakeholder-card reveal">
+              <h3>地方：台南市府 / 經發局</h3>
+              <p><strong>價值：</strong>地方型 SBIR、智慧城市與在地企業服務案例。</p>
+              <p><strong>下一步：</strong>先討論 SBIR 是否送件，並確認台南落地資格。</p>
+            </article>
+            <article class="stakeholder-card reveal">
+              <h3>產業：ASML / 50 人中小企業</h3>
+              <p><strong>價值：</strong>員工健康 ROI、ESG 量化、職安健康管理升級。</p>
+              <p><strong>下一步：</strong>用 90 天 SOW 約訪，確認窗口與 LOI。</p>
+            </article>
+            <article class="stakeholder-card reveal">
+              <h3>學校：中信科大健管系所</h3>
+              <p><strong>價值：</strong>課程、認證、研究、實習與企業場域。</p>
+              <p><strong>下一步：</strong>5/11 確認主持人、師資、發證與實習機制。</p>
+            </article>
+            <article class="stakeholder-card reveal">
+              <h3>第三方：媒體 / 法人 / 基金會</h3>
+              <p><strong>價值：</strong>曝光、技術引介、共同申請與健康議題放大。</p>
+              <p><strong>下一步：</strong>5-8 月先不主動公關，等示範案有證據再說。</p>
+            </article>
+            <article class="stakeholder-card reveal">
+              <h3>共同節奏：每月更新地圖</h3>
+              <p><strong>價值：</strong>避免只靠單點人脈，把關係經營變成可追蹤管線。</p>
+              <p><strong>下一步：</strong>建立 Top 5 接觸清單與每月例會。</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1226,37 +1898,78 @@
             <div class="tag-row"><span class="tag hot">T0</span><span class="tag hot">5/5 12:00</span></div>
             <h3>臺南地方型 SBIR</h3>
             <p>先討論是否送件；目前尚未送過件，若本輪文件不足，改列下一輪或其他補助路線。</p>
+            <div class="grant-meta" aria-label="SBIR 決策提示"><span>需台南落地</span><span>Go/No-Go</span></div>
             <div class="meter" aria-label="適配度 82%"><span style="--w:82%"></span></div>
           </article>
           <article class="grant-card reveal" data-type="urgent">
             <div class="tag-row"><span class="tag hot">T0</span><span class="tag hot">5/18 17:00</span></div>
             <h3>DIGITAL+ 數位服務創新補助</h3>
             <p>最值得本一科技短期評估的中央案。以 AI 健康促進 SaaS 與企業 dashboard 包裝。</p>
+            <div class="grant-meta" aria-label="DIGITAL+ 決策提示"><span>本一主導</span><span>SaaS 包裝</span></div>
             <div class="meter" aria-label="適配度 90%"><span style="--w:90%"></span></div>
           </article>
           <article class="grant-card reveal" data-type="partner">
             <div class="tag-row"><span class="tag">T1</span><span class="tag">園區企業主導</span></div>
             <h3>南科新興科技應用計畫</h3>
             <p>需園區科學事業作申請機構，至少結合 1 家學研機構。ASML 或園區中小企業是否願意出面是關鍵。</p>
+            <div class="grant-meta" aria-label="南科計畫提示"><span>企業出面</span><span>中信學研</span></div>
             <div class="meter" aria-label="適配度 86%"><span style="--w:86%"></span></div>
           </article>
           <article class="grant-card reveal" data-type="next">
             <div class="tag-row"><span class="tag wait">T1</span><span class="tag wait">116 年預備</span></div>
             <h3>智慧雨林健康照護領域</h3>
             <p>115 年度多已截止，但非常適合本案長期主線。用中信範本先搭計畫書骨架。</p>
+            <div class="grant-meta" aria-label="智慧雨林提示"><span>116 年主線</span><span>健康照護</span></div>
             <div class="meter" aria-label="適配度 88%"><span style="--w:88%"></span></div>
           </article>
           <article class="grant-card reveal" data-type="next">
             <div class="tag-row"><span class="tag wait">T1</span><span class="tag wait">人才路線</span></div>
             <h3>科學園區人才培育補助</h3>
             <p>適合中信科大主導課程，搭配本一科技業師、平台、企業題目與見習場域。</p>
+            <div class="grant-meta" aria-label="人才補助提示"><span>學校主導</span><span>認證課程</span></div>
             <div class="meter" aria-label="適配度 84%"><span style="--w:84%"></span></div>
           </article>
           <article class="grant-card reveal" data-type="next">
             <div class="tag-row"><span class="tag">T2</span><span class="tag">中長期研發</span></div>
             <h3>A+ 企業創新研發淬鍊</h3>
             <p>可包裝成 AI 健康風險預測與數據治理平台，但審查強度高，不搶本週主線。</p>
+            <div class="grant-meta" aria-label="A+ 提示"><span>研發強度高</span><span>Q3 後</span></div>
             <div class="meter" aria-label="適配度 64%"><span style="--w:64%"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tainan-base" id="tainan-base">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Tainan Base Decision</p>
+            <h2>台南據點先給生態系一個可被看見的落點。</h2>
+          </div>
+          <p>根據 B3：不用一開始就重資產設公司，先把 TTA 沙崙作為對外台南據點，再用營收、MOU 與補助結果決定是否升級。</p>
+        </div>
+        <div class="path-grid">
+          <article class="path-card reveal">
+            <span class="path-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 20V8l6-4 6 4v12"/><path d="M9 20v-6h6v6"/></svg></span>
+            <b>Phase 1｜5-7 月</b>
+            <h3>TTA 沙崙先用</h3>
+            <p>對外稱「本一科技台南據點」，支援南科局、市府、中信科大與企業拜訪。</p>
+            <div class="trigger-list"><span class="trigger-chip">確認設籍細節</span><span class="trigger-chip">可收信與接待</span></div>
+          </article>
+          <article class="path-card reveal">
+            <span class="path-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 19V6h10v13"/><path d="M10 10h4M10 14h4"/></svg></span>
+            <b>Phase 2｜7-9 月</b>
+            <h3>子公司評估</h3>
+            <p>用明確 Go/No-Go 觸發條件，避免為了補助過早建立固定成本。</p>
+            <div class="trigger-list"><span class="trigger-chip">ASML / 企業 MOU</span><span class="trigger-chip">本季營收 200 萬+</span></div>
+          </article>
+          <article class="path-card reveal">
+            <span class="path-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V9l4-2 4 2 4-2 4 2v9"/><path d="M7 18v-5h3v5M14 18v-5h3v5"/></svg></span>
+            <b>Phase 3｜10 月後</b>
+            <h3>正式台南編制</h3>
+            <p>若企業服務與補助管線成形，再配置 1-3 人駐點，負責業務、客戶成功與 PM。</p>
+            <div class="trigger-list"><span class="trigger-chip">業務量穩定</span><span class="trigger-chip">南科合作擴大</span></div>
           </article>
         </div>
       </div>
@@ -1346,6 +2059,80 @@
       </div>
     </section>
 
+    <section class="section roadmap" id="roadmap">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Six-Month Roadmap</p>
+            <h2>5 月到 10 月，把會議結論推成可發表、可收費、可申請的節奏。</h2>
+          </div>
+          <p>根據 B6：媒體不要太早，先把 MOU、認證、示範案與補助證據做出來，再讓南科與企業願意擴大。</p>
+        </div>
+        <div class="roadmap-track" aria-label="5月到10月推進藍圖">
+          <article class="roadmap-month reveal">
+            <b>May</b>
+            <h3>5 月｜定義聯盟</h3>
+            <p>5/11 推進會議把主計畫、分工、企業示範與補助決策鎖住。</p>
+            <ul>
+              <li>MOU 草約啟動</li>
+              <li>ASML / 中小企業 SOW v0.1</li>
+              <li>DIGITAL+ Go/No-Go</li>
+            </ul>
+          </article>
+          <article class="roadmap-month reveal">
+            <b>Jun</b>
+            <h3>6 月｜補助與課綱</h3>
+            <p>地方型 SBIR 先討論是否送件，智慧雨林與人才補助提前布 116 年。</p>
+            <ul>
+              <li>認證課綱送審</li>
+              <li>A+ / SBIR 諮詢</li>
+              <li>南科企業窗口確認</li>
+            </ul>
+          </article>
+          <article class="roadmap-month reveal">
+            <b>Jul</b>
+            <h3>7 月｜第一班開課</h3>
+            <p>用中信科大健康專業建立學術委員會與第一班 AI 體適能檢測員。</p>
+            <ul>
+              <li>第 1 屆認證開課</li>
+              <li>學術委員會成形</li>
+              <li>中信學報 / 健康類首發</li>
+            </ul>
+          </article>
+          <article class="roadmap-month reveal">
+            <b>Aug</b>
+            <h3>8 月｜示範上線</h3>
+            <p>ASML 或 50 人左右中小企業試辦啟動，同步做台南子公司決策。</p>
+            <ul>
+              <li>90 天示範開始</li>
+              <li>dashboard 與 LINEBot 測試</li>
+              <li>台南子公司 Go/No-Go</li>
+            </ul>
+          </article>
+          <article class="roadmap-month reveal">
+            <b>Sep</b>
+            <h3>9 月｜中段證據</h3>
+            <p>第一批學員結訓，示範案累積使用率、完測率與企業端回饋。</p>
+            <ul>
+              <li>第 1 屆學員結訓</li>
+              <li>示範案中期報告</li>
+              <li>第 2、3 班招生</li>
+            </ul>
+          </article>
+          <article class="roadmap-month reveal">
+            <b>Oct</b>
+            <h3>10 月｜公關與擴大</h3>
+            <p>有案例後再啟動科技與 ESG 媒體，準備季度成果發表會。</p>
+            <ul>
+              <li>季度成果發表</li>
+              <li>科技 / ESG 媒體敘事</li>
+              <li>南科企業第二波叩門</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section sow" id="sow">
       <div class="wrap">
         <div class="section-head">
@@ -1356,27 +2143,46 @@
           <p>這一段可直接當作 ASML 或 50 人左右中小企業約訪時的提案大綱。</p>
         </div>
         <div class="sow-layout">
-          <div class="phase-board">
-            <article class="phase reveal">
-              <div class="phase-time">Day 0-14</div>
-              <div><h3>啟動與需求訪談</h3><p>HR、職安、IT、法務訪談，確認員工族群、資料治理與資安要求。</p></div>
-            </article>
-            <article class="phase reveal">
-              <div class="phase-time">Day 15-30</div>
-              <div><h3>流程與系統準備</h3><p>檢測流程、同意書、LINEBot、dashboard 指標設定與測試。</p></div>
-            </article>
-            <article class="phase reveal">
-              <div class="phase-time">Day 31-60</div>
-              <div><h3>示範服務執行</h3><p>員工檢測、健康處方、追蹤提醒、課程活動與營運週報。</p></div>
-            </article>
-            <article class="phase reveal">
-              <div class="phase-time">Day 61-75</div>
-              <div><h3>數據分析與優化</h3><p>使用率、完測率、風險族群與活動成效分析，產出中期改善建議。</p></div>
-            </article>
-            <article class="phase reveal">
-              <div class="phase-time">Day 76-90</div>
-              <div><h3>結案與擴大提案</h3><p>企業彙總 dashboard、結案報告、年度導入規劃與正式 SOW。</p></div>
-            </article>
+          <div class="pilot-stack">
+            <div class="pilot-modules" aria-label="90天示範案核心模組">
+              <article class="module-card reveal">
+                <div class="module-tags"><span>M1</span><span>BodyCam</span></div>
+                <h3>AI 智慧體適能檢測</h3>
+                <p>用最短流程取得員工健康基準線，建立後續處方與追蹤資料。</p>
+              </article>
+              <article class="module-card reveal">
+                <div class="module-tags"><span>M3</span><span>HR Dashboard</span></div>
+                <h3>企業彙總儀表板</h3>
+                <p>企業只看去識別化趨勢，對齊 ESG、職安與健康投資 ROI。</p>
+              </article>
+              <article class="module-card reveal">
+                <div class="module-tags"><span>Safety</span><span>Consent</span></div>
+                <h3>個資同意與資料治理</h3>
+                <p>先把法務、職安、IT、同意書與權限邊界講清楚，再進場執行。</p>
+              </article>
+            </div>
+            <div class="phase-board">
+              <article class="phase reveal">
+                <div class="phase-time">Day 0-14</div>
+                <div><h3>啟動與需求訪談</h3><p>HR、職安、IT、法務訪談，確認員工族群、資料治理與資安要求。</p></div>
+              </article>
+              <article class="phase reveal">
+                <div class="phase-time">Day 15-30</div>
+                <div><h3>流程與系統準備</h3><p>檢測流程、同意書、LINEBot、dashboard 指標設定與測試。</p></div>
+              </article>
+              <article class="phase reveal">
+                <div class="phase-time">Day 31-60</div>
+                <div><h3>示範服務執行</h3><p>員工檢測、健康處方、追蹤提醒、課程活動與營運週報。</p></div>
+              </article>
+              <article class="phase reveal">
+                <div class="phase-time">Day 61-75</div>
+                <div><h3>數據分析與優化</h3><p>使用率、完測率、風險族群與活動成效分析，產出中期改善建議。</p></div>
+              </article>
+              <article class="phase reveal">
+                <div class="phase-time">Day 76-90</div>
+                <div><h3>結案與擴大提案</h3><p>企業彙總 dashboard、結案報告、年度導入規劃與正式 SOW。</p></div>
+              </article>
+            </div>
           </div>
           <aside class="kpi-panel reveal" aria-label="示範案KPI">
             <header>

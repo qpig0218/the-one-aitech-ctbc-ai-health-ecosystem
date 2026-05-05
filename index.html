@@ -1488,7 +1488,7 @@
       .hero { min-height: 92svh; }
       .hero::before {
         background:
-          linear-gradient(0deg, rgba(17, 23, 18, .84) 0%, rgba(17, 23, 18, .36) 62%, rgba(17, 23, 18, .52) 100%),
+          linear-gradient(0deg, rgba(17, 23, 18, .92) 0%, rgba(17, 23, 18, .82) 38%, rgba(17, 23, 18, .68) 70%, rgba(17, 23, 18, .58) 100%),
           url("assets/hero-the-one-aitech.png") 66% center / cover no-repeat;
       }
       .hero-inner {
@@ -1504,10 +1504,22 @@
       .hero-kicker {
         max-width: 100%;
       }
+      .hero h1 span {
+        color: #ffb368;
+        text-shadow:
+          0 2px 4px rgba(0, 0, 0, .85),
+          0 6px 18px rgba(17, 23, 18, .7);
+      }
       .hero-kicker {
         font-size: 17px;
+        color: #fffaf0;
         overflow-wrap: break-word;
         text-wrap: pretty;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .75);
+      }
+      .issue-line {
+        color: rgba(255, 250, 240, .92);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .7);
       }
       .hero-actions {
         display: none;
